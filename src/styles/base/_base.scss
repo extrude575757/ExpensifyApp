@@ -1,5 +1,6 @@
 html {
     font-size: 62.5%;
+    background: black;
 }
 
 body {
@@ -13,4 +14,14 @@ button {
 
 button:disabled {
     cursor: default;
+}
+
+h1 {
+    color: rgba(241, 202, 30, 0.575);
+    font-family: 'IM Fell Great Primer', serif;
+}
+
+.is-active {
+    font-weight: bold;
+    font-size: $xl-size;
 }
