@@ -18,11 +18,58 @@ const Info = (props) => (
 const withAdminWarning = (WrappedComponent) => {
     return (props) => (
         <div>
-         {props.isAdmin && <p>You Are Admin!</p>}
+         {props.isAdmin && <p>This is private info. Please don't share!</p>}
          <WrappedComponent {...props}/>
         </div>
     );
 };
+//////////////// Challenge
 const AdminInfo = withAdminWarning(Info);
+const requireAuthentication = (WrappedComponent) => {
+    return (props) => (
+        <div>
+        {props.isAuthenticated && <p>Authenticated Nigger G</p>}
+        <WrappedComponent {...props} />wad
+        </div>
+    ); 
+};
+const AuthInfo = requireAuthentication(Info);
 
-ReactDOM.render(<AdminInfo isAdmin={true} info= 'This is the fuckin info fucken fuck' />, document.getElementById('app'));
+ReactDOM.render(<AuthInfo isAuthenticated={false} info= 'This is the fuckin info fucken fuck' />, document.getElementById('app'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
