@@ -6,4 +6,4 @@ const NotFound = () => (
     <b>Halt 404</b> the not found 404 page.<Link to="/" className="dashColor3">Link to a real page</Link>
     </div>
 );
-export default NotFound;
+export default NotFound;   

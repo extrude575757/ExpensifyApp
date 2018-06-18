@@ -1,4 +1,8 @@
 Desktop\Web Design\Courses\Complete_React_Course\Section2\ExpensifyApp
+NPM/Yarn commands
+-----------------------------------------------------------------------------------
+npm outdated -g --depth=0 : Show globally outdated depencies such as yarn
+npm outdated : Shows all locally outdated depencies 
 // Type $r in console to view the global variable it is present for all components 
   if you are in the react developer tool console and click on a react componenet
   then switch to the console & type $r, you can view each components global variable that way to see all props & state.
@@ -119,8 +123,17 @@ yarn add normalize.css
 -------------------------------------------------------------------------------------
 Install react-router
 yarn add react-router-dom@4.2.2
-
-
+-----------------------------------------------------------------------------------------------
+Install redux to access the store easier
+yarn add redux@4.0.0
+-------------------------------------------------------------------------------------------------
+install uuid for trick numbredge
+>yarn add uuid@3.2.1
+===============================================================================================================
+install spread object operator for super usefull syntax that has not made its way to the main stream as the array spread operator has
+yarn add babel-plugin-transform-object-rest-spread@6.26.0
+---------------------------------------------------------------------------------------------
+yarn upgrade-interactive — Allows you to selectively upgrade specific packages in a simple way
 
 
 
