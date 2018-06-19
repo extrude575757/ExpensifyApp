@@ -1,14 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Switch, BrowserRouter,NavLink, Link, Route} from 'react-router-dom';
-const Header = () => (
+import {NavLink} from 'react-router-dom';
+const Header = (props) => {
+    
+    return (
     <div>
-    <header><h1 className="font-effect-neon">Expensify</h1>
+    <header><h1>A Website</h1>
     <NavLink to="/"  activeClassName="is-active" className="visitedLinks" exact={true}>Home</NavLink> 
-    <NavLink to="/create" activeClassName="is-active" className="visitedLinks3">Create</NavLink>
-    <NavLink to="/help" activeClassName="is-active" className="visitedLinks4">Help</NavLink>
+    <NavLink to="/portfolio" activeClassName="is-active" className="visitedLinks4" exact={true}>Portfolio</NavLink>
+    <NavLink to="/contact" activeClassName="is-active" className="visitedLinks3">Contact</NavLink>
+    
     </header>
     </div>
     
 );
+};
 export default Header;

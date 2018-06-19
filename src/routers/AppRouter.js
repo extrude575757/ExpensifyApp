@@ -3,14 +3,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Switch, BrowserRouter,NavLink, Link, Route} from 'react-router-dom';  
 import Header from '../components/Header';
-import Expense from '../components/Expense';
-import Edit from '../components/Edit';
-import Dashboard from '../components/Dashboard';
-import Help from '../components/Help';
 import NotFound from '../components/NotFound';
-
-
-
+import Home from '../components/Home';
+import Contact from '../components/Contact';
+import Portfolio from '../components/Portfolio';
+import PortfolioItem from '../components/PortfolioItem';
 
 
 
@@ -19,10 +16,10 @@ const AppRouter = () => (
     <div>
     <Header />
     <Switch>
-    <Route path="/" component={Expense} exact={true}/>
-    <Route path="/create" component={Dashboard} />
-    <Route path="/help" component={Help} />
-    <Route path="/editPage/:id" component={Edit} />
+    <Route path="/" component={Home} exact={true}/>
+    <Route path="/contact" component={Contact} />
+    <Route path="/Portfolio" component={Portfolio} exact={true}/>
+    <Route path="/portfolio/:id" component={PortfolioItem} />
     <Route component={NotFound} />
     </Switch>
     </div> 
