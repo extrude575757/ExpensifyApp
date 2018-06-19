@@ -134,7 +134,10 @@ install spread object operator for super usefull syntax that has not made its wa
 yarn add babel-plugin-transform-object-rest-spread@6.26.0
 ---------------------------------------------------------------------------------------------
 yarn upgrade-interactive — Allows you to selectively upgrade specific packages in a simple way
-
+-----------------------------------------------------------------------------------------------------------
+Installing the react-redux to use connect & provider store
+yarn add react-redux@5.0.7
+============================================================================================================
 
 
 
