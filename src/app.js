@@ -1,79 +1,31 @@
-// Higher order component (hoc) is  a component (higher order component) that renders another component (any regular component)
-// THis will give us the following advantages
-// Reuse code
-// Render hijacking
-// Prop maninpulation
-// Absract state
-// Supper usesful code saver with use of higher order components Yoyo
+
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-// Notice capital first letter because it is a React Component
-const Info = (props) =>( 
-<div>
-    <h1>Please Login</h1>
-    <p>Your info + props = {props.info}</p> 
-</div>
-);
+import { Provider} from 'react-redux';
+import AppRouter from './routers/AppRouter';
+import configureStore from './store/configureStore';
+import {addExpense} from './actions/expenses';
+import {setTextFilter} from './actions/filters';
+import getVisibleExpenses from './selectors/expenses';
+import 'normalize.css/normalize.css';
+import './styles/styles.scss';
 
-const withAdminWarning = (WrappedComponent) => {
-    return (props) => (
-        <div>
-         {props.isAdmin && <p>This is private info. Please don't share!</p>}
-         <WrappedComponent {...props}/>
-        </div>
-    );
-};
-//////////////// Challenge
-const AdminInfo = withAdminWarning(Info);
-const requireAuthentication = (WrappedComponent) => {
-    return (props) => (
-        <div>
-        {props.isAuthenticated ? (
-            <WrappedComponent {...props} />
-        ) : (
-            <p>Please login to view info Nigger G</p>
-        )}
-        
-        </div>
-    ); 
-};
-const AuthInfo = requireAuthentication(Info);
+const store = configureStore();
+const expense1 = store.dispatch(addExpense({description: 'Rent',amount:300, createdAt: -1000}));
+const expense2 = store.dispatch(addExpense({description: 'Fire Bill',amount:200, createdAt: 10200}));
 
-ReactDOM.render(<AuthInfo isAuthenticated={false} info= 'This is the fuckin info fucken fuck' />, document.getElementById('app'));
+store.subscribe(() => {
+    const state = store.getState();
+    const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
+    console.log(visibleExpenses);
+});
+store.dispatch(setTextFilter('sdf'));
+const jsx = (
+    <Provider store={store}>
+    <AppRouter />
+    </Provider>
+)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//console.log(store.getState());
+ReactDOM.render(jsx, document.getElementById('app'));
