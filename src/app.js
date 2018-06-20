@@ -39,7 +39,7 @@ const requireAuthentication = (WrappedComponent) => {
 };
 const AuthInfo = requireAuthentication(Info);
 
-ReactDOM.render(<AuthInfo isAuthenticated={true} info= 'This is the fuckin info fucken fuck' />, document.getElementById('app'));
+ReactDOM.render(<AuthInfo isAuthenticated={false} info= 'This is the fuckin info fucken fuck' />, document.getElementById('app'));
 
 
 

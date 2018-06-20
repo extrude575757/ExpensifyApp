@@ -3,6 +3,17 @@ NPM/Yarn commands
 -----------------------------------------------------------------------------------
 npm outdated -g --depth=0 : Show globally outdated depencies such as yarn
 npm outdated : Shows all locally outdated depencies 
+--------------------------------------------------------------------------------------
+To update yarn 
+npm uninstall yarn -g
+npm install yarn -g
+--------------------------------------------------------------------------
+To update depencies do it threw npm. So far yarn is only good for why command
+Use npm install -g npm-check-updates to install, then npm-check-updates to check if your dependencies have updates, 
+and npm-check-updates -u to update your package.json versions.
+ Then it's just npm install and it will download new versions. Its also always a good idea to remove node_moduels
+ folder then npm --clear-chache then npm install will just reinstall all depencies to the updated version specified
+ in package.json
 // Type $r in console to view the global variable it is present for all components 
   if you are in the react developer tool console and click on a react componenet
   then switch to the console & type $r, you can view each components global variable that way to see all props & state.
